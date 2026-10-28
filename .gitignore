@@ -1,2 +1,5 @@
 # The full CV contains a phone number and references' contact details; keep it out of this public repo
 Resume_*.pdf
+
+# Original photo still has camera metadata incl. GPS; images/portrait.jpg is the stripped web version
+tim_portrait.jpg
