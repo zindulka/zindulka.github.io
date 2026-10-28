@@ -1,0 +1,388 @@
+/* Schibsted Grotesk, self-hosted (SIL Open Font License, see fonts/OFL.txt) */
+@font-face {
+  font-family: "Schibsted Grotesk";
+  font-style: normal;
+  font-weight: 400 900;
+  font-display: swap;
+  src: url("fonts/schibsted-grotesk-latin-wght-normal.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Schibsted Grotesk";
+  font-style: italic;
+  font-weight: 400 900;
+  font-display: swap;
+  src: url("fonts/schibsted-grotesk-latin-wght-italic.woff2") format("woff2");
+}
+
+:root {
+  --paper: #ffffff;
+  --ink: #000000;
+  --text: #3a3a3a;
+  --muted: #6f6f6f;
+  --underline: #b5b5b5;
+  --hairline: #e4e4e4;
+  --caret: #2457d6;
+
+  --label: 12.5rem;   /* left column: portrait, dates, group names */
+  --gap: 3rem;
+  --measure: 42.5rem; /* right column: text */
+  --edge: 1.5rem;
+
+  color-scheme: light;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--text);
+  font-family: "Schibsted Grotesk", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.55;
+  font-kerning: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background: rgba(36, 87, 214, 0.16);
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+ol,
+ul {
+  margin: 0;
+}
+
+ol,
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  color: var(--ink);
+  text-decoration-line: underline;
+  text-decoration-thickness: 1px;
+  text-decoration-color: var(--underline);
+  text-underline-offset: 0.22em;
+}
+
+a:hover {
+  text-decoration-color: currentColor;
+}
+
+a:focus-visible {
+  outline: 2px solid var(--caret);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.skip-link {
+  position: absolute;
+  top: -4rem;
+  left: var(--edge);
+  z-index: 1;
+  padding: 0.5rem 0.75rem;
+  background: var(--ink);
+  color: var(--paper);
+  text-decoration: none;
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
+.page {
+  width: min(100% - 2 * var(--edge), var(--label) + var(--gap) + var(--measure));
+  margin-inline: auto;
+}
+
+/* Header */
+
+.site-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.5rem 2rem;
+  padding-block: 2rem;
+}
+
+.site-name {
+  font-size: 1.3125rem;
+  font-weight: 500;
+}
+
+.site-name a {
+  text-decoration: none;
+}
+
+.site-nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.5rem;
+  font-size: 1rem;
+}
+
+.site-nav a {
+  text-decoration-color: currentColor;
+}
+
+.site-nav a:hover {
+  text-decoration-thickness: 2px;
+}
+
+/* Two-column rows: label on the left, content on the right */
+
+.intro,
+.group,
+.item {
+  display: grid;
+  grid-template-columns: var(--label) minmax(0, 1fr);
+  column-gap: var(--gap);
+}
+
+.group,
+.item {
+  align-items: baseline;
+}
+
+/* Intro */
+
+.intro {
+  margin-top: 4rem;
+}
+
+.portrait {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.about {
+  color: var(--ink);
+  font-size: 1.5rem;
+  line-height: 1.42;
+  letter-spacing: -0.008em;
+  text-wrap: pretty;
+}
+
+.interests {
+  margin-top: 1.25rem;
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+.contact {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.25rem;
+  margin-top: 1.25rem;
+  font-size: 1rem;
+}
+
+/* Sections */
+
+.section {
+  margin-top: 6rem;
+  scroll-margin-top: 1.5rem;
+}
+
+.section h2 {
+  margin-bottom: 1.75rem;
+  color: var(--ink);
+  font-size: 1.3125rem;
+  font-weight: 500;
+}
+
+.section-note {
+  margin-top: -1.25rem;
+  margin-bottom: 2rem;
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+.group + .group {
+  margin-top: 3rem;
+}
+
+.label,
+.when {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.item + .item,
+.pub + .pub {
+  margin-top: 1.75rem;
+}
+
+.title {
+  color: var(--ink);
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 1.4;
+  text-wrap: pretty;
+}
+
+.where {
+  margin-left: 0.35rem;
+  color: var(--muted);
+  font-weight: 400;
+  white-space: nowrap;
+}
+
+.role {
+  margin-top: 0.2rem;
+  font-size: 1rem;
+}
+
+.desc {
+  margin-top: 0.2rem;
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+/* Publications */
+
+.authors {
+  margin-top: 0.3rem;
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+.me {
+  color: var(--ink);
+  font-weight: 500;
+}
+
+.venue {
+  margin-top: 0.15rem;
+  font-size: 1rem;
+}
+
+.venue-name {
+  margin-right: 0.4rem;
+  color: var(--muted);
+  font-style: italic;
+}
+
+.venue a + a {
+  margin-left: 0.6rem;
+}
+
+/* Footer */
+
+.site-footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.75rem 2rem;
+  margin-top: 7rem;
+  padding-block: 1.75rem 3rem;
+  border-top: 1px solid var(--hairline);
+  font-size: 1rem;
+}
+
+.colophon {
+  color: var(--muted);
+}
+
+/* A text cursor, as if the page were still being written */
+.caret {
+  display: inline-block;
+  width: 2px;
+  height: 1.15em;
+  margin-left: 0.2em;
+  vertical-align: -0.22em;
+  background: var(--caret);
+  animation: blink 1.06s steps(1) infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .caret {
+    animation: none;
+  }
+}
+
+/* Small screens: one column */
+
+@media (max-width: 47.5rem) {
+  :root {
+    --edge: 1.25rem;
+  }
+
+  .intro,
+  .group,
+  .item {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .site-header {
+    flex-direction: column;
+    padding-block: 1.5rem;
+  }
+
+  .intro {
+    margin-top: 2rem;
+  }
+
+  .portrait {
+    width: 8.5rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .about {
+    font-size: 1.3125rem;
+  }
+
+  .section {
+    margin-top: 4.5rem;
+  }
+
+  .label {
+    margin-bottom: 1rem;
+    color: var(--muted);
+  }
+
+  .when {
+    margin-bottom: 0.15rem;
+    color: var(--muted);
+  }
+
+  .site-footer {
+    margin-top: 5rem;
+  }
+}
